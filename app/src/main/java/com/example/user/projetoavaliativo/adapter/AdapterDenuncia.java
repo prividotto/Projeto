@@ -21,6 +21,11 @@ public class AdapterDenuncia extends BaseAdapter {
     List<MausTratos> listaMausTratos = new ArrayList<>();
     Activity activity;
 
+    public AdapterDenuncia(List<MausTratos> listaMausTratos, Activity activity) {
+        this.listaMausTratos = listaMausTratos;
+        this.activity = activity;
+    }
+
 
     @Override
     public int getCount() {

@@ -44,6 +44,10 @@
         <activity
             android:name=".mausTratos.ListaMausTratos"
             android:label="@string/title_activity_lista_maus_tratos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".mausTratos.CadastrarDenuncia"
+            android:label="@string/title_activity_cadastrar_denuncia"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -4,4 +4,5 @@
     <string name="title_activity_lista_adocao">ListaAdocao</string>
     <string name="title_activity_cadastrar_adocao">CadastrarAdocao</string>
     <string name="title_activity_lista_maus_tratos">ListaMausTratos</string>
+    <string name="title_activity_cadastrar_denuncia">CadastrarDenuncia</string>
 </resources>

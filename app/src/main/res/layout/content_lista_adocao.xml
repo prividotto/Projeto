@@ -13,6 +13,13 @@
     tools:context="com.example.user.projetoavaliativo.adocao.ListaAdocao"
     tools:showIn="@layout/activity_lista_adocao">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chama_formulario"
+        android:text="Cadastrar"
+        android:onClick="chamarFormulario"/>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

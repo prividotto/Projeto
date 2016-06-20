@@ -20,7 +20,7 @@ public class MausTratos extends SugarRecord{
         this.cidadeDenuncia = cidadeDenuncia;
         this.latitude = latitude;
         this.longitude = longitude;
-        Denuncia = denuncia;
+        this.Denuncia = denuncia;
     }
 
     public MausTratos() {

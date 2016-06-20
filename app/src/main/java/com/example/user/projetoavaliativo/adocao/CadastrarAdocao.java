@@ -91,6 +91,7 @@ public class CadastrarAdocao extends AppCompatActivity {
                     adocao.setCastrado(castrado.getText().toString());
                     adocao.setIdade(idade.getText().toString());
                     adocao.save();
+                    finish();
 
                 }else{
                     descricao.requestFocus();

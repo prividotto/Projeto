@@ -1,11 +1,14 @@
 package com.example.user.projetoavaliativo.mausTratos;
 
+import android.content.Intent;
+import android.content.IntentSender;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.animation.Interpolator;
 import android.widget.ListView;
 
 import com.example.user.projetoavaliativo.R;
@@ -18,11 +21,24 @@ import java.util.List;
 public class ListaMausTratos extends AppCompatActivity {
 
 
-    AdapterDenuncia adapterDenuncia = new AdapterDenuncia();
-    MausTratos mausTratos;
+    private AdapterDenuncia adapterDenuncia;
+    private MausTratos mausTratos;
 
-    List<MausTratos> listaMausTratos = new ArrayList<>();
-    ListView lista;
+    private List<MausTratos> listaMausTratos = new ArrayList<>();
+    private ListView lista;
+
+    public void chamarFormularioNovaDenuncia (View view){
+
+        Intent it = new Intent (this,CadastrarDenuncia.class);
+        startActivity(it);
+    }
+
+
+
+    public void preencherListaDenuncia(){
+        adapterDenuncia = new AdapterDenuncia(MausTratos.listAll(MausTratos.class),this);
+        lista.setAdapter(adapterDenuncia);
+                }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +47,8 @@ public class ListaMausTratos extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
+        lista = (ListView)findViewById(R.id.lista_maus_tratos);
+        preencherListaDenuncia();
 
     }
 

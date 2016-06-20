@@ -1,8 +1,10 @@
 package com.example.user.projetoavaliativo.adocao;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ListView;
 
 import com.example.user.projetoavaliativo.adapter.AdapterAdocao;
@@ -14,7 +16,7 @@ import java.util.List;
 
 public class ListaAdocao extends AppCompatActivity {
 
-    AdapterAdocao adapterAdocao;
+    private AdapterAdocao adapterAdocao;
     private Adocao adocao;
 
     private List<Adocao> listaAdocao = new ArrayList<>();
@@ -25,6 +27,14 @@ public class ListaAdocao extends AppCompatActivity {
 
         adapterAdocao = new AdapterAdocao(Adocao.listAll(Adocao.class), this);
         lista.setAdapter(adapterAdocao);
+    }
+
+    public void chamarFormulario(View view)
+    {
+
+        Intent it = new Intent(this, CadastrarAdocao.class);
+        startActivity(it);
+
     }
 
     @Override

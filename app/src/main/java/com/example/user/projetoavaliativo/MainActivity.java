@@ -1,5 +1,6 @@
 package com.example.user.projetoavaliativo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,7 +10,28 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.user.projetoavaliativo.adocao.ListaAdocao;
+import com.example.user.projetoavaliativo.mausTratos.ListaMausTratos;
+
 public class MainActivity extends AppCompatActivity {
+
+
+    //ESTE MÉTODO É CHAMADO PELO BOTÃO "ADOÇÃO" NA TELA PRINCIPAL E LEVA PARA A ACTIVITY DA LISTA DE ADOÇÃO
+    public void cadastroDeAdocao(View view)
+    {
+        Intent it = new Intent(this,ListaAdocao.class);
+        setContentView(R.layout.activity_lista_adocao);
+    }
+
+
+    //ESTE MÉTODO É CHAMADO PELO BOTÃO "DENUNCIAR" NA TELA PRINCIPAL E LEVA PARA A ACTIVITY DA LISTA DE DENUNCIAS
+    public void cadastroDeDenuncia (View view)
+    {
+
+        Intent it = new Intent(this, ListaMausTratos.class);
+        setContentView(R.layout.activity_lista_maus_tratos);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,15 +40,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
             }
-        });
-    }
+/*
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -49,4 +64,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+*/
 }
